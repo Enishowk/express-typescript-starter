@@ -1,0 +1,26 @@
+{
+  "name": "express-typescript-starter",
+  "version": "1.0.0",
+  "description": "Simple starter for Express in Typescript",
+  "main": "build/server.js",
+  "scripts": {
+    "compile": "tsc",
+    "dev": "tsc -w & nodemon build/server.js",
+    "prod": "node build/server.js",
+    "watch": "tsc -w"
+  },
+  "author": "enishowk",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "express": "^4.16.4"
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
