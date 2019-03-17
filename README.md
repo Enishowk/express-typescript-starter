@@ -22,3 +22,4 @@
 
 ## Not included
 * [express-fileupload](https://github.com/richardgirges/express-fileupload) : Simple express middleware for uploading files.
+* [TypeORM](https://typeorm.io/#/) : ORM for TypeScript and JavaScript 
