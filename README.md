@@ -1,5 +1,12 @@
 # Express and Typescript starter 
 
+## Installation and test
+
+* Clone project
+* `npm install`
+* `npm run dev`
+* Go to http://localhost:3000 and http://localhost:3000/user
+
 ## Script
 
 * `npm run compile` : compile TS file in build folder.
