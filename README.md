@@ -1,4 +1,4 @@
-# Express and Typescript starter 
+# Express and TypeScript starter 
 
 ## Installation and test
 
@@ -18,7 +18,7 @@
 ## Package
 
 * [Express](https://expressjs.com/fr/) 🤷‍
-* [Typescript](https://www.typescriptlang.org/)
+* [TypeScript](https://www.typescriptlang.org/)
 * [TSLint](https://palantir.github.io/tslint/) :  Linter for the TypeScript language.
 * [Prettier](https://prettier.io/) : Prettier is an opinionated code formatter. 
 ***
