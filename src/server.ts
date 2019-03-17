@@ -1,8 +1,12 @@
+import compression from 'compression';
 import express from 'express';
 import helmet from 'helmet';
 
 const app = express();
+// init helmet
 app.use(helmet());
+// compress all responses
+app.use(compression());
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
