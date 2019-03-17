@@ -1,12 +1,14 @@
+import bodyParser from 'body-parser';
 import compression from 'compression';
+import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
 
 const app = express();
-// init helmet
 app.use(helmet());
-// compress all responses
 app.use(compression());
+app.use(cors());
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
