@@ -1,26 +1,46 @@
-import bodyParser from 'body-parser';
-import compression from 'compression';
-import cors from 'cors';
-import express from 'express';
-import helmet from 'helmet';
+import compression from "compression";
+import cors from "cors";
+import express, { Request, Response } from "express";
+import helmet from "helmet";
+import { Server } from "http";
 
 // declare all routers
-import defaultRouter from './routes/defaultRouter';
-import userRouter from './routes/userRouter';
+import defaultRouter from "./routes/defaultRouter";
+import userRouter from "./routes/userRouter";
+
+const DEFAULT_PORT = 3000;
 
 const app = express();
 app.use(helmet());
 app.use(compression());
 app.use(cors());
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
-app.use(bodyParser.json());
 
 // init your routes
-app.use('/', defaultRouter);
-app.use('/user', userRouter);
+app.use("/", defaultRouter);
+app.use("/users", userRouter);
 
-app.listen(3000, () =>
-  console.log('Listening on port 3000! http://localhost:3000')
-);
+// NOT FOUND
+app.use((_req: Request, res: Response) => {
+  return res.status(404).json({ error: "Not Found" });
+});
+
+// SERVER ERROR
+app.use((err: Error, _req: Request, res: Response) => {
+  console.error(`${new Date()} Error handler :`, err);
+  return res.status(500).json({ error: "Internal Server Error" });
+});
+
+const server = app.listen(DEFAULT_PORT, () => {
+  console.log(`Listening on port ${DEFAULT_PORT}`);
+});
+
+process.on("SIGINT", () => shutdownGracefully(server));
+process.on("SIGTERM", () => shutdownGracefully(server));
+
+const shutdownGracefully = (server: Server) => {
+  console.info("\nClosing server gracefully...");
+  server.close(async () => {
+    console.info("Server closed.");
+    process.exit();
+  });
+};

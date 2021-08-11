@@ -1,9 +1,5 @@
-import { Request, Response } from 'express';
+import { Request, Response } from "express";
 
-const index = (req: Request, res: Response) => {
-  res.send('Hello World!');
-};
-
-export default {
-  index
+export const index = (_req: Request, res: Response) => {
+  return res.send("Hello World!");
 };

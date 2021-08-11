@@ -1,9 +1,5 @@
-import { Request, Response } from 'express';
+import { Request, Response } from "express";
 
-const getUser = (req: Request, res: Response) => {
-  res.send('Hello User!');
-};
-
-export default {
-  getUser
+export const getUser = (_req: Request, res: Response) => {
+  return res.send("Hello User!");
 };
