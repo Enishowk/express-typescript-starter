@@ -2,8 +2,9 @@
   "compilerOptions": {
     "module": "commonjs",
     "esModuleInterop": true,
-    "target": "es6",
-    "noImplicitAny": true,
+    "target": "ESNEXT",
+    // "noImplicitAny": true,
+    "strict": true,
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "build",
@@ -11,7 +12,7 @@
     "paths": {
       "*": ["node_modules/*", "src/types/*"]
     },
-    "lib": ["es2015"]
+    "lib": ["es2018"]
   },
   "include": ["src/**/*"]
 }
