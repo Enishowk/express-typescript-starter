@@ -5,7 +5,7 @@
 * Clone project
 * `npm install`
 * `npm run dev`
-* Go to http://localhost:3000 and http://localhost:3000/user
+* Go to http://localhost:3000 and http://localhost:3000/users
 
 ## Script
 
@@ -21,7 +21,6 @@
 * [TypeScript](https://www.typescriptlang.org/)
 * [TSLint](https://palantir.github.io/tslint/) :  Linter for the TypeScript language.
 * [Prettier](https://prettier.io/) : Prettier is an opinionated code formatter. 
-***
 * [body-parser](https://github.com/expressjs/body-parser) : Node.js body parsing middleware.
 * [Compression](https://github.com/expressjs/compression) : Compression can greatly decrease the size of the response body and hence increase the speed of a web app.
 * [CORS](https://github.com/expressjs/cors) : Middleware that can be used to enable CORS with various options.
