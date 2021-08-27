@@ -4,6 +4,7 @@ import express, { Request, Response } from "express";
 import helmet from "helmet";
 import { Server } from "http";
 
+import { errorHandler } from "./utils/error";
 // declare all routers
 import defaultRouter from "./routes/defaultRouter";
 import userRouter from "./routes/userRouter";
@@ -26,10 +27,7 @@ app.use((_req: Request, res: Response) => {
 });
 
 // SERVER ERROR
-app.use((err: Error, _req: Request, res: Response) => {
-  console.error(`${new Date()} Error handler :`, err);
-  return res.status(500).json({ error: "Internal Server Error" });
-});
+app.use(errorHandler);
 
 const server = app.listen(DEFAULT_PORT, () => {
   console.log(`Listening on port ${DEFAULT_PORT}`);
