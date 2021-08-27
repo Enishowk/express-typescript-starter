@@ -3,11 +3,15 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "ESNEXT",
-    // "noImplicitAny": true,
-    "strict": true,
     "moduleResolution": "node",
     "outDir": "build",
-    "lib": ["es2018"]
+    "lib": ["es2018"],
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*"]
 }
