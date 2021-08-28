@@ -1,10 +1,9 @@
 import compression from "compression";
 import cors from "cors";
-import express, { Request, Response } from "express";
+import express, { NextFunction, Request, Response } from "express";
 import helmet from "helmet";
 import { Server } from "http";
 
-import { errorHandler } from "./utils/error";
 // declare all routers
 import defaultRouter from "./routes/defaultRouter";
 import userRouter from "./routes/userRouter";
@@ -27,7 +26,10 @@ app.use((_req: Request, res: Response) => {
 });
 
 // SERVER ERROR
-app.use(errorHandler);
+app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
+  console.error(err);
+  return res.status(500).send({ error: "Something failed!" });
+});
 
 const server = app.listen(DEFAULT_PORT, () => {
   console.log(`Listening on port ${DEFAULT_PORT}`);
